@@ -16,7 +16,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - uses: superfly/flyctl-actions/setup-flyctl@master
       - name: npm install
         run: npm install
       - name: lint
@@ -31,6 +30,8 @@ jobs:
           build: npm run build
           start: npm run start-prod
           wait-on: http://localhost:5000
+      - name: flyio preparation
+        uses: superfly/flyctl-actions/setup-flyctl@master
       - name: fly deploy
         run: flyctl deploy --remote-only
 
