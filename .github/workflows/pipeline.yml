@@ -36,7 +36,7 @@ jobs:
 
   flyio_deployment:
     if: ${{ github.event_name == 'push' }}
-    needs: [PreDeploymentChecks]
+    needs: [pre_deployment_checking]
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
