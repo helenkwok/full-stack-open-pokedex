@@ -1,0 +1,22 @@
+name: Periodic Health Check
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '45 * * * *' # See: crontab.guru
+
+jobs:
+  check_fail:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check for broken route
+        uses: jtalk/url-health-check-action@v2.2
+        with:
+          url: https://full-stack-open-pokedex.fly.dev/fail
+  check_success:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check for healthy route
+        uses: jtalk/url-health-check-action@v2.2
+        with:
+          url: https://full-stack-open-pokedex.fly.dev/health

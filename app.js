@@ -10,6 +10,10 @@ app.get('/health', (_req, res) => {
   res.send('ok')
 })
 
+app.get('/fail', (req, res) => {
+  res.status(404).send()
+})
+
 app.get('/version', (_req, res) => {
   res.send('2') // change this string to ensure a new version deployed
 })
