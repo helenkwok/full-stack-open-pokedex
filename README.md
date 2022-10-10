@@ -2,6 +2,8 @@
 
 This repository is used for the CI/CD module of the Full stack open course
 
+Deployed app: [https://full-stack-open-pokedex.fly.dev](https://full-stack-open-pokedex.fly.dev)
+
 Fork the repository to complete course exercises
 
 ## Commands
