@@ -3,7 +3,7 @@ name: Periodic Health Check
 on:
   workflow_dispatch:
   schedule:
-    - cron: '45 * * * *' # See: crontab.guru
+    - cron: '0 0 15 * *' # crontab.guru
 
 jobs:
   check_fail:
